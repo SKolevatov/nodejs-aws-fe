@@ -1,3 +1,5 @@
+Link to CloudFront website: https://d3q52y5xysba04.cloudfront.net/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
