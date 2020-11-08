@@ -9,9 +9,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Product} from "models/Product";
 import {formatAsPrice} from "utils/utils";
 import AddProductToCart from "components/AddProductToCart/AddProductToCart";
-// import axios from 'axios';
-// import API_PATHS from "constants/apiPaths";
-import productList from "./productList.json";
+import axios from 'axios';
+import API_PATHS from "constants/apiPaths";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -36,9 +35,9 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // axios.get(`${API_PATHS.bff}/product/available/`)
-    //   .then(res => setProducts(res.data));
-    setProducts(productList);
+    axios.get(`${API_PATHS.product}/products`)
+      .then(res => setProducts(res.data));
+    // setProducts(productList);
   }, [])
 
   return (
@@ -48,8 +47,8 @@ export default function Products() {
           <Card className={classes.card}>
             <CardMedia
               className={classes.cardMedia}
-              image="https://source.unsplash.com/random"
-              title="Image title"
+              image="https://scx1.b-cdn.net/csz/news/800/2020/googleconduc.jpg"
+              title="Quantum computer"
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="h2">
